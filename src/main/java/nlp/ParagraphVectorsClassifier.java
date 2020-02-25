@@ -39,7 +39,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ParagraphVectorsClassifier {
 
@@ -72,6 +75,9 @@ public class ParagraphVectorsClassifier {
     void makeParagraphVectors() throws Exception {
         File resource = new File(dataLocalPath, "paravec/labeled");
 
+        List<String> removewords = Arrays.asList("!", ".", ",", "ourselves", "hers", "between", "yourself", "but", "again", "there", "about", "once", "during", "out", "very", "having", "with", "they", "own", "an", "be", "some", "for", "do", "its", "yours", "such", "into", "of", "most", "itself", "other", "off", "is", "s", "am", "or", "who", "as", "from", "him", "each", "the", "themselves", "until", "below", "are", "we", "these", "your", "his", "through", "don", "nor", "me", "were", "her", "more", "himself", "this", "down", "should", "our", "their", "while", "above", "both", "up", "to", "ours", "had", "she", "all", "no", "when", "at", "any", "before", "them", "same", "and", "been", "have", "in", "will", "on", "does", "yourselves", "then", "that", "because", "what", "over", "why", "so", "can", "did", "not", "now", "under", "he", "you", "herself", "has", "just", "where", "too", "only", "myself", "which", "those", "i", "after", "few", "whom", "t", "being", "if", "theirs", "my", "against", "a", "by", "doing", "it", "how", "further", "was", "here", "than");
+
+
         // build a iterator for our dataset
         iterator = new FileLabelAwareIterator.Builder()
             .addSourceFolder(resource)
@@ -82,12 +88,15 @@ public class ParagraphVectorsClassifier {
 
         // ParagraphVectors training configuration
         paragraphVectors = new ParagraphVectors.Builder()
+            .stopWords(removewords)
+            .minWordFrequency(2)
+            .windowSize(5)
             .learningRate(0.025)
             .minLearningRate(0.001)
             .batchSize(1000)
-            .epochs(20)
+            .epochs(250)
             .iterate(iterator)
-            .trainWordVectors(true)
+//            .trainWordVectors(true)
             .tokenizerFactory(tokenizerFactory)
             .build();
 
@@ -103,32 +112,34 @@ public class ParagraphVectorsClassifier {
 
     // This method performs categorization
 
-    void checkUnlabeledData() throws IOException {
+    void checkUnlabeledData() throws IOException, IllegalStateException {
+
+        try {
       /*
       At this point we assume that we have model built and we can check
       which categories our unlabeled document falls into.
       So we'll start loading our unlabeled documents and checking them
      */
-        File unClassifiedResource = new File(dataLocalPath, "paravec/unlabeled");
-        FileLabelAwareIterator unClassifiedIterator = new FileLabelAwareIterator.Builder()
-            .addSourceFolder(unClassifiedResource)
-            .build();
+            File unClassifiedResource = new File(dataLocalPath, "paravec/unlabeled");
+            FileLabelAwareIterator unClassifiedIterator = new FileLabelAwareIterator.Builder()
+                    .addSourceFolder(unClassifiedResource)
+                    .build();
 
      /*
       Now we'll iterate over unlabeled data, and check which label it could be assigned to
       Please note: for many domains it's normal to have 1 document fall into few labels at once,
       with different "weight" for each.
      */
-        MeansBuilder meansBuilder = new MeansBuilder(
-            (InMemoryLookupTable<VocabWord>) paragraphVectors.getLookupTable(),
-            tokenizerFactory);
-        LabelSeeker seeker = new LabelSeeker(iterator.getLabelsSource().getLabels(),
-            (InMemoryLookupTable<VocabWord>) paragraphVectors.getLookupTable());
+            MeansBuilder meansBuilder = new MeansBuilder(
+                    (InMemoryLookupTable<VocabWord>) paragraphVectors.getLookupTable(),
+                    tokenizerFactory);
+            LabelSeeker seeker = new LabelSeeker(iterator.getLabelsSource().getLabels(),
+                    (InMemoryLookupTable<VocabWord>) paragraphVectors.getLookupTable());
 
-        while (unClassifiedIterator.hasNextDocument()) {
-            LabelledDocument document = unClassifiedIterator.nextDocument();
-            INDArray documentAsCentroid = meansBuilder.documentAsVector(document);
-            List<Pair<String, Double>> scores = seeker.getScores(documentAsCentroid);
+            while (unClassifiedIterator.hasNextDocument()) {
+                LabelledDocument document = unClassifiedIterator.nextDocument();
+                INDArray documentAsCentroid = meansBuilder.documentAsVector(document);
+                List<Pair<String, Double>> scores = seeker.getScores(documentAsCentroid);
 
          /*
           please note, document.getLabel() is used just to show which document we're looking at now,
@@ -136,10 +147,14 @@ public class ParagraphVectorsClassifier {
           So, labels on these two documents are used like titles,
           just to visualize our classification done properly
          */
-            log.info("Document '" + document.getLabels() + "' falls into the following categories: ");
-            for (Pair<String, Double> score : scores) {
-                log.info("        " + score.getFirst() + ": " + score.getSecond());
+                log.info("Document '" + document.getLabels() + "' falls into the following categories: ");
+                for (Pair<String, Double> score : scores) {
+                    log.info("        " + score.getFirst() + ": " + score.getSecond());
+                }
             }
+        }
+        catch(IllegalStateException e) {
+            System.out.println(e);
         }
 
     }

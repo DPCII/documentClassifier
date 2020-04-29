@@ -32,11 +32,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tools.LabelSeeker;
 import tools.MeansBuilder;
-
 import java.io.File;
 import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
+
 
 public class ParagraphVectorsClassifier2 {
 
@@ -68,7 +70,6 @@ public class ParagraphVectorsClassifier2 {
 
     void makeParagraphVectors() throws Exception {
         File resource = new File(dataLocalPath, "paravec/labeled");
-
         List<String> removewords = Arrays.asList("!", ".", ",", "ourselves", "hers", "between", "yourself", "but", "again", "there", "about", "once", "during", "out", "very", "having", "with", "they", "own", "an", "be", "some", "for", "do", "its", "yours", "such", "into", "of", "most", "itself", "other", "off", "is", "s", "am", "or", "who", "as", "from", "him", "each", "the", "themselves", "until", "below", "are", "we", "these", "your", "his", "through", "don", "nor", "me", "were", "her", "more", "himself", "this", "down", "should", "our", "their", "while", "above", "both", "up", "to", "ours", "had", "she", "all", "no", "when", "at", "any", "before", "them", "same", "and", "been", "have", "in", "will", "on", "does", "yourselves", "then", "that", "because", "what", "over", "why", "so", "can", "did", "not", "now", "under", "he", "you", "herself", "has", "just", "where", "too", "only", "myself", "which", "those", "i", "after", "few", "whom", "t", "being", "if", "theirs", "my", "against", "a", "by", "doing", "it", "how", "further", "was", "here", "than");
 
 
@@ -85,8 +86,9 @@ public class ParagraphVectorsClassifier2 {
             .stopWords(removewords)
             .learningRate(0.025)
             .minLearningRate(0.001)
-            .batchSize(1000)
-            .epochs(200)
+            .batchSize(500)
+            .iterations(1)
+            .epochs(5)
             .iterate(iterator)
             .trainWordVectors(true)
             .tokenizerFactory(tokenizerFactory)
@@ -102,11 +104,12 @@ public class ParagraphVectorsClassifier2 {
 
 
 
-    // This method performs categorization
+    // This method performs categorization on previously unseen data without training the model
 
     void checkUnlabeledData() throws IOException, IllegalStateException {
 
         String vecAbsPath = "/Users/imac/IdeaProjects/documentClassifier/src/main/java/dataparaVectors.pv";
+
 
         ParagraphVectors paragraphVectors = WordVectorSerializer.readParagraphVectors(vecAbsPath);
         File resource = new File(dataLocalPath, "paravec/labeled");
@@ -143,20 +146,24 @@ public class ParagraphVectorsClassifier2 {
                 INDArray documentAsCentroid = meansBuilder.documentAsVector(document);
                 List<Pair<String, Double>> scores = seeker.getScores(documentAsCentroid);
 
-         /*
-          please note, document.getLabel() is used just to show which document we're looking at now,
-          as a substitute for printing out the whole document name.
-          So, labels on these two documents are used like titles,
-          just to visualize our classification done properly
-         */
-                log.info("Document '" + document.getLabels() + "' falls into the following categories: ");
+                Pair<String, Double> winningLabel = new Pair<>();
+                winningLabel.setSecond(0.00);
+                log.info("'" + document.getContent().trim().toUpperCase() + "'" + " falls into the following categories: ");
                 for (Pair<String, Double> score : scores) {
                     log.info("        " + score.getFirst() + ": " + score.getSecond());
+                    if(score.getSecond() > winningLabel.getSecond())
+                        winningLabel = score;
                 }
+                // Get highest score and return it
+                DecimalFormat df = new DecimalFormat(".##");
+                df.setRoundingMode(RoundingMode.HALF_UP);
+
+                System.out.println("Document Label is: " + winningLabel.getFirst() +
+                        " with a cosine similarity of: " + df.format(winningLabel.getSecond()));
             }
         }
         catch(IllegalStateException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
     }

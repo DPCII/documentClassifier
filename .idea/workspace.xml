@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23f29883-41f4-4151-b90e-2411a99463d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -10,14 +10,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/nlp/ParagraphVectorsClassifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/nlp/ParagraphVectorsClassifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/paravec/labeled/iran_us_conflict/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/paravec/labeled/iran_us_conflict/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/paravec/unlabeled/sample1/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/paravec/unlabeled/sample1/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/paravec/unlabeled/sample2/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/paravec/unlabeled/sample2/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/paravec/unlabeled/sample3/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/paravec/unlabeled/sample3/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataparaVectors.pv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nlp/ParagraphVectorsClassifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nlp/ParagraphVectorsClassifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/nlp/ParagraphVectorsClassifier2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/nlp/ParagraphVectorsClassifier2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nlp/ParagraphVectorsClassifier2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nlp/ParagraphVectorsClassifier2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +25,38 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="13.0.1" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1XLxSGUcCZIril9lXRQYhJEHiDH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -43,10 +69,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -56,8 +82,33 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ParagraphVectorsClassifier">
+  <component name="RunManager" selected="Application.Word2VecModel">
+    <configuration name="FastTextModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nlp.FastTextModel" />
+      <module name="documentClassifier.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nlp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ParagraphVectorsClassifier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="13.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="nlp.ParagraphVectorsClassifier" />
       <module name="documentClassifier.main" />
       <extension name="coverage">
@@ -66,12 +117,47 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ParagraphVectorsClassifier2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="13.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="nlp.ParagraphVectorsClassifier2" />
+      <module name="documentClassifier.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nlp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Word2VecModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nlp.Word2VecModel" />
       <module name="documentClassifier.main" />
       <extension name="coverage">
         <pattern>
@@ -100,8 +186,17 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.ParagraphVectorsClassifier" />
+      <item itemvalue="Application.ParagraphVectorsClassifier2" />
+      <item itemvalue="Gradle.documentClassifier" />
+      <item itemvalue="Application.FastTextModel" />
+      <item itemvalue="Application.Word2VecModel" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Word2VecModel" />
+        <item itemvalue="Application.FastTextModel" />
         <item itemvalue="Application.ParagraphVectorsClassifier2" />
         <item itemvalue="Application.ParagraphVectorsClassifier" />
         <item itemvalue="Gradle.documentClassifier" />
@@ -131,38 +226,43 @@
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="320" y="103" width="929" height="732" key="#Project_Structure/0.23.1440.837@0.23.1440.837" timestamp="1580847763128" />
-    <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580845633612">
+    <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588035412562">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.837@0.23.1440.837" timestamp="1580845633612" />
+    <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.837@0.23.1440.837" timestamp="1588035412562" />
+    <state x="387" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588082544151">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="387" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.837@0.23.1440.837" timestamp="1588082544151" />
     <state x="100" y="123" width="1240" height="630" key="DiffContextDialog" timestamp="1580843978288">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="100" y="123" width="1240" height="630" key="DiffContextDialog/0.23.1440.837@0.23.1440.837" timestamp="1580843978288" />
-    <state width="1363" height="278" key="GridCell.Tab.0.bottom" timestamp="1581427192458">
+    <state width="1386" height="343" key="GridCell.Tab.0.bottom" timestamp="1588115801629">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1363" height="278" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1581427192458" />
-    <state width="1363" height="278" key="GridCell.Tab.0.center" timestamp="1581427192457">
+    <state width="1386" height="343" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1588115801629" />
+    <state width="1386" height="343" key="GridCell.Tab.0.center" timestamp="1588115801628">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1363" height="278" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1581427192457" />
-    <state width="1363" height="278" key="GridCell.Tab.0.left" timestamp="1581427192457">
+    <state width="1386" height="343" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1588115801628" />
+    <state width="1386" height="343" key="GridCell.Tab.0.left" timestamp="1588115801627">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1363" height="278" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1581427192457" />
-    <state width="1363" height="278" key="GridCell.Tab.0.right" timestamp="1581427192458">
+    <state width="1386" height="343" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1588115801627" />
+    <state width="1386" height="343" key="GridCell.Tab.0.right" timestamp="1588115801628">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1363" height="278" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1581427192458" />
-    <state x="208" y="23" key="SettingsEditor" timestamp="1580849560895">
+    <state width="1386" height="343" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1588115801628" />
+    <state x="208" y="23" key="SettingsEditor" timestamp="1588035441386">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="208" y="23" key="SettingsEditor/0.23.1440.837@0.23.1440.837" timestamp="1580849560895" />
-    <state x="386" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1581387479918">
+    <state x="208" y="23" key="SettingsEditor/0.23.1440.837@0.23.1440.837" timestamp="1588035441386" />
+    <state x="386" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1588078630154">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="386" y="269" key="com.intellij.ide.util.TipDialog/0.23.1440.837@0.23.1440.837" timestamp="1581387479918" />
+    <state x="386" y="269" key="com.intellij.ide.util.TipDialog/0.23.1440.837/1440.23.1920.1057@0.23.1440.837" timestamp="1585584752017" />
+    <state x="386" y="269" key="com.intellij.ide.util.TipDialog/0.23.1440.837@0.23.1440.837" timestamp="1588078630154" />
     <state x="114" y="52" key="new project wizard" timestamp="1580870259131">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
